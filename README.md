@@ -1,0 +1,2 @@
+# EffectiveJavaScript
+書籍EffectiveJavaScriptをGoogle Apps ScriptのV8で読み替えたコードです
