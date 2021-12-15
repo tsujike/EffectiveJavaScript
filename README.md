@@ -1,6 +1,10 @@
 # EffectiveJavaScript
 書籍EffectiveJavaScriptをGoogle Apps ScriptのV8で読み替えたコードです
 
+正誤表はこちら
+
+https://www.shoeisha.co.jp/book/detail/9784798131115
+
 
 ## Chapter 1: Accustoming Yourself to JavaScript
 ### Item 1: Know Which JavaScript You Are Using
