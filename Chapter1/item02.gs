@@ -1,138 +1,81 @@
-/**
- *  * TEST用関数
- * */
-function my() {
+function myFunction2_00() {
 
-  // console.log(0b1100); //12
+  console.log(0b1100); //12
 
-  // console.log(typeof 17); //number
-  // console.log(typeof -2.1); //number
-  // console.log(typeof 0b1100); //number
+  console.log(typeof 17); //number
+  console.log(typeof -2.1); //number
+  console.log(typeof 0b1100); //number
 
 
-  // console.log(0.1 * 1.9); //0.19
-  // console.log(2.5 / 5); //0.5
-  // console.log(21 % 8); //5
+  console.log(0.1 * 1.9); //0.19
+  console.log(2.5 / 5); //0.5
+  console.log(21 % 8); //5
 
   //ビット演算 = 暗黙の32ビット整数変換
-  // console.log(8 | 1); //9
+  console.log(8 | 1); //9
 
   console.log((8).toString(2)); //1000
-  console.log(100.0.toString()); //100.toStringって書けないのは、
-
-
-  // console.log((1).toString(2)); //1
-
-
-  // console.log((8).toString(2).padStart(32,0)); //00000000000000000000000000001000
-  // console.log((1).toString(2).padStart(32,0)); //00000000000000000000000000000001
-
-  // console.log((8).toString(2).padStart(32,0) === '00000000000000000000000000001000'); //true
-  // console.log((1).toString(2).padStart(32,0) === '00000000000000000000000000000001'); //true
-
+  console.log(100.0.toString()); //100
 
   //バイナリリテラル
-  // console.log(0b00000000000000000000000000001001); //9
-  // console.log(0b1001); //9
+  console.log(0b00000000000000000000000000001001); //9
+  console.log(0b1001); //9
 
   //parseInt
-  // console.log(parseInt('00000000000000000000000000001001',2)); //9
-  // console.log(parseInt('1001',2)); //9
-
+  console.log(parseInt('00000000000000000000000000001001',2)); //9
+  console.log(parseInt('1001',2)); //9
 
   //循環小数
-  // console.log(10/3); //3.3333333333333335
-  // console.log((3.3333333333333335).toString(2)); //11.010101010101010101010101010101010101010101010101011 //2+1+51
-  //doubleによる小数の表現では、64ビットのうち最初の1ビットを符号ビット（0なら正の数、1なら負の数を表す）、次の11ビットを指数部、残りの52ビットを仮数部として用います。
-  //本質的には、指数部と仮数部はそれぞれ2進数で表された整数であると解釈されます。
-  //特に、doubleにおける仮数部の精度は53ビットであることは覚えておくに値するでしょう（52ビットからなぜ1つ増えているのかは調べてみてください）。
-  //丸めだと考えていいんじゃない？
+  console.log(10/3); //3.3333333333333335
+  console.log((3.3333333333333335).toString(2)); //11.010101010101010101010101010101010101010101010101011 //2+1+51
 
   //オクタリテラルhttps://www.webcyou.com/?p=6711
-  // console.log(010); //8
-  // console.log(017); //15
-  // console.log(018); //18
-  // console.log(020); //16
+  console.log(010); //8
+  console.log(017); //15
+  console.log(018); //18
+  console.log(020); //16
 
 
-  // console.log((100).toString(2)); //'1010'
-  // console.log((-0xff).toString(2)) // '-11111111'
-  //https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/intber/toString
+  console.log((100).toString(2)); //'1010'
+  console.log((-0xff).toString(2)) // '-11111111'
 
-  // console.log(parseInt("10歳")); //10
-  // console.log(parseInt("10歳",10)); //10
-  // console.log(parseInt("1010歳",2)); //10
-  // console.log(parseInt(1010,2)); //10
+  console.log(parseInt("10歳")); //10
+  console.log(parseInt("10歳",10)); //10
+  console.log(parseInt("1010歳",2)); //10
+  console.log(parseInt(1010,2)); //10
 
 
   //小数点を2進数で表すと、桁がいくらあっても足りない。
   //例えば、4桁の2進数で表すと、重みである、0.5 0.25 0.125 0.0625の4つの組合わせでないと表現できない
-  // console.log((0).toString(2));      //'0.0000'
-  // console.log((0.0625).toString(2)); //'0.0001'
-  // console.log((0.125).toString(2));  //'0.0010'
-  // console.log((0.1875).toString(2)); //'0.0011'
-  // console.log((0.25).toString(2));   //'0.0100'
-  // console.log((0.5).toString(2));    //'0.1000'
+  console.log((0).toString(2));      //'0.0000'
+  console.log((0.0625).toString(2)); //'0.0001'
+  console.log((0.125).toString(2));  //'0.0010'
+  console.log((0.1875).toString(2)); //'0.0011'
+  console.log((0.25).toString(2));   //'0.0100'
+  console.log((0.5).toString(2));    //'0.1000'
 
   //10進数の0.625と0.125の間の0.1を2進数に変換すると、小数点以下の桁数が何百あっても足りない。
-  // console.log((0.1).toString(2)); //0.0001100110011001100110011001100110011001100110011001101（丸め）
+  console.log((0.1).toString(2)); //0.0001100110011001100110011001100110011001100110011001101（丸め）
 
   //循環小数と呼ばれるこれと同じ
-  // console.log(10 / 3); //3.3333333333333335
+  console.log(10 / 3); //3.3333333333333335
 
   //なので、有名なこのような現象になる
-  // console.log(0.1 + 0.2); //0.30000000000000004
-  // console.log(0.1 + 0.2 === 0.3); //false
-
-  //浮動小数点で得られる結果は近似値
-  //回避策のひとつは無視する　テキストP67
-  //小数点を整数に置き換える
+  console.log(0.1 + 0.2); //0.30000000000000004
+  console.log(0.1 + 0.2 === 0.3); //false
 
   //こうやってもダメ
-  // console.log(((0.1 * 10) + (0.2 * 10)) * 0.1); //0.30000000000000004
-  // console.log(((0.1 + 0.2) * 10)); //0.30000000000000004
+  console.log(((0.1 * 10) + (0.2 * 10)) * 0.1); //0.30000000000000004
+  console.log(((0.1 + 0.2) * 10)); //0.30000000000000004
 
   //テキストではこう言ってる
-  // console.log(1 + 2); //0.30000000000000004
-  // console.log(1 + 2 === 3); //false
-
-  // ES5には2つの関数があるよ
-  // https://hnw.hatenablog.com/entry/2019/02/26/114349
-
-  //toFixed() は10進n桁への丸めを誤差なく実現するため文字列型を返す
-  // Math.round() は誤差なく数値型を返すため10進n桁への丸めを提供していない
-
-  /*
-  小数点の切り捨て方法
-  //https://iwb.jp/javascript-decimal-point-floor-match/
-  
-  例えばJavaScriptで123.456という数値の小数点の第2位まで表示したい場合、いくつかやり方が存在する。
-  
-  一般的に使用されるのは以下の7種類だ
-  
-  floorを使用する
-  toFixedを使用する
-  toPrecisionを使用する
-  sliceを使用する
-  substrを使用する
-  substringを使用する
-  matchを使用する
-  */
-
-  //整数もダブルの部分集合というのは、10は、-10,-1,0,1,10のなかの1つだよって意味。
-
-  //ビット演算によるフラグ判定
-  //https://pig.hatenadiary.com/entry/20120621/1340237658
-  //https://lambdalisue.hatenablog.com/entry/2013/12/22/041347
-
-
-  //参考資料：プログラムはなぜ動くのか
+  console.log(1 + 2); //0.30000000000000004
+  console.log(1 + 2 === 3); //false
 
 }
 
 
-
-function myFunction1_2_01() {
+function myFunction2_01() {
 
   const THOUSANDS = 10 ** 3;
   const HUNDREDS = 10 ** 2;
@@ -149,7 +92,7 @@ function myFunction1_2_01() {
 }
 
 
-function myFunction1_2_02() {
+function myFunction2_02() {
 
   const FORTH = 2 ** 3;
   const THIRD = 2 ** 2;
@@ -163,18 +106,17 @@ function myFunction1_2_02() {
 
   console.log(a + b + c + d); //12
 
-
 }
 
 
-function myFunction1_2_03() {
+function myFunction2_03() {
 
   console.log((12).toString(2)); //'1100'
 
 }
 
 
-function myFunction1_2_04() {
+function myFunction2_04() {
 
   console.log(Number.parseInt(1100, 2)); //12
   console.log(parseInt(1100, 2)); //12
@@ -182,7 +124,7 @@ function myFunction1_2_04() {
 }
 
 
-function myFunction1_2_05() {
+function myFunction2_05() {
 
   console.log((8).toString(2).padStart(32, 0)); //00000000000000000000000000001000
   console.log((1).toString(2).padStart(32, 0)); //00000000000000000000000000000001
@@ -190,7 +132,7 @@ function myFunction1_2_05() {
 }
 
 
-function myFunction1_2_06() {
+function myFunction2_06() {
 
   console.log((8).toString(2).padStart(32, 0)); //00000000000000000000000000001000
   console.log((1).toString(2).padStart(32, 0)); //00000000000000000000000000000001
@@ -213,7 +155,7 @@ function myFunction1_2_06() {
 
 }
 
-function myFunction1_2_07() {
+function myFunction2_07() {
 
   //1011（いちぜろいちいち）
   const FORTH = 2 ** 3;
@@ -248,7 +190,7 @@ function myFunction1_2_07() {
 }
 
 
-function myFunction1_2_08() {
+function myFunction2_08() {
 
   const U_FIRST = 2 ** -1;
   const U_SECOND = 2 ** -2;
@@ -263,7 +205,7 @@ function myFunction1_2_08() {
 }
 
 
-function myFunction1_2_09() {
+function myFunction2_09() {
 
   //10進数の0.625と0.125の間の0.1を2進数に変換すると、小数点以下の桁数が何百あっても足りない。
   console.log((0.1).toString(2)); //0.0001100110011001100110011001100110011001100110011001101（丸め）
@@ -284,7 +226,7 @@ function myFunction1_2_09() {
 
 
 
-function myFunction1_2_10() {
+function myFunction2_10() {
 
   //ゼロの省略
   console.log(.123); //0.123
@@ -306,7 +248,7 @@ function myFunction1_2_10() {
 }
 
 
-function myFunction1_2_11() {
+function myFunction2_11() {
   //小数点以下を○○して整数を返す
 
   //四捨五入する
@@ -323,7 +265,7 @@ function myFunction1_2_11() {
 
 }
 
-function myFunction1_2_12() {
+function myFunction2_12() {
 
   //小数点第一位を基準とする（四捨五入・切り捨て・切り上げ）
   console.log(Math.round(123.456 * 10) / 10); //123.5
@@ -337,7 +279,7 @@ function myFunction1_2_12() {
 
 }
 
-function myFunction1_2_13() {
+function myFunction2_13() {
 
   const x = Math.floor(0.10123 * 10) / 10; //0.1
   const y = Math.floor(0.20123 * 10) / 10; //0.2
@@ -346,7 +288,7 @@ function myFunction1_2_13() {
 
 }
 
-function myFunction1_2_14() {
+function myFunction2_14() {
 
   //5.015を倍精度小数点で16桁確認する
   console.log((5.015).toFixed(16)); //5.0149999999999997
@@ -365,7 +307,7 @@ function myFunction1_2_14() {
   console.log(typeof (0.1).toFixed(1)); //string
 }
 
-function myFunction1_2_15() {
+function myFunction2_15() {
 
   /**
    * 小数点以下3桁を四捨五入で丸め、2桁の文字列で返す関数
@@ -379,8 +321,6 @@ function myFunction1_2_15() {
   console.log(financial('123456.02円')); //'123456.02'
 
 }
-
-
 
 
 

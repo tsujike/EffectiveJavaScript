@@ -1,4 +1,4 @@
-function myFunction1_5_01() {
+function myFunction5_01() {
 
   //リテラルが用意されているオブジェクトはリテラルで書く
   console.log(new String('Tom')); //{ '0': 'T', '1': 'o', '2': 'm' }
@@ -24,7 +24,7 @@ function myFunction1_5_01() {
 
 
 
-function myFunction1_5_02() {
+function myFunction5_02() {
 
   //数値型から文字列型への変換と強制
   const num = 10;
@@ -53,7 +53,7 @@ function myFunction1_5_02() {
 }
 
 
-function myFunction1_5_03() {
+function myFunction5_03() {
 
   const json = `{
       "birthday_year": "1980",
@@ -100,7 +100,7 @@ function myFunction1_5_03() {
 }
 
 
-function myFunction1_5_04() {
+function myFunction5_04() {
 
   //オブジェクトに定義されている2つのメソッド
   console.log(new Number('10').valueOf()); //10 number

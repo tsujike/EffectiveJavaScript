@@ -1,4 +1,4 @@
-function myFunction1_3_01() {
+function myFunction3_01() {
 
   //実行する際はコメントインアウトしながら
   // console.log("hello"(1)); //TypeError: "hello" is not a function
@@ -7,7 +7,7 @@ function myFunction1_3_01() {
 }
 
 
-function myFunction1_3_02() {
+function myFunction3_02() {
 
   console.log(3 + true); //4
 
@@ -18,7 +18,7 @@ function myFunction1_3_02() {
 }
 
 
-function myFunction1_3_03() {
+function myFunction3_03() {
 
   //複数の型が混在する演算
   console.log(1 + 2 + '3'); //'33'
@@ -33,7 +33,7 @@ function myFunction1_3_03() {
 
 }
 
-function myFunction1_3_04() {
+function myFunction3_04() {
 
   //論理和
   console.log('8' & 1); //0
@@ -43,7 +43,7 @@ function myFunction1_3_04() {
 
 }
 
-function myFunction1_3_05() {
+function myFunction3_05() {
 
   //nullはエラーが起きるはずだが、0に変換されてしまう
   const n = null;
@@ -58,7 +58,7 @@ function myFunction1_3_05() {
 
 }
 
-function myFunction1_3_06() {
+function myFunction3_06() {
 
   //NaNがNaNであるかを判定できない
   const x = NaN;
@@ -70,7 +70,7 @@ function myFunction1_3_06() {
 
 }
 
-function myFunction1_3_07() {
+function myFunction3_07() {
 
   //NaN以外の引数は、isNaN()メソッドでは判定できない
   console.log(isNaN('foo')); //true
@@ -104,7 +104,7 @@ function myFunction1_3_07() {
 
 }
 
-function myFunction1_3_08() {
+function myFunction3_08() {
 
   //リテラルでオブジェクトを生成する2つのトップレベルオブジェクト
   console.log(JSON, typeof JSON); //{}, object
@@ -121,7 +121,7 @@ function myFunction1_3_08() {
 }
 
 
-function myFunction1_3_09() {
+function myFunction3_09() {
 
   //valueOf()メソッドはオブジェクトのthis.valueを返す
   const x = (123).valueOf();
@@ -150,7 +150,7 @@ function myFunction1_3_09() {
 }
 
 
-function myFunction1_3_00() {
+function myFunction3_00() {
   return
   console.log(Number, typeof Number); //[Function: Number] 'function'
 
@@ -195,7 +195,7 @@ function myFunction1_3_00() {
 }
 
 
-function myFunction1_3_10() {
+function myFunction3_10() {
 
   //暗黙の型変換でfalseを返す値
   if (false || 0 || -0 || '' || NaN || null || undefined) {
@@ -208,7 +208,7 @@ function myFunction1_3_10() {
 
 }
 
-function myFunction1_3_11() {
+function myFunction3_11() {
 
   /**
    * 引数が0かfalsyを判定する関数
@@ -227,7 +227,7 @@ function myFunction1_3_11() {
 
 
 
-function myFunction1_3_12() {
+function myFunction3_12() {
 
   const values = [[], [''], [0]];
 

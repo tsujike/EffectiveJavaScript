@@ -14,7 +14,7 @@ class Point {
 
 }
 
-function myFunction1_6_01() {
+function myFunction6_01() {
 
   const p = new Point(null, null);
 
@@ -23,7 +23,7 @@ function myFunction1_6_01() {
 }
 
 
-function myFunction1_6_02() {
+function myFunction6_02() {
 
 
   const square = x => {
@@ -46,7 +46,7 @@ function myFunction1_6_02() {
 }
 
 
-function myFunction1_6_03() {
+function myFunction6_03() {
 
   let a = 10;
   const b = () => { return '私はb関数の戻り値です' };
@@ -70,7 +70,7 @@ function myFunction1_6_03() {
 
 }
 
-function myFunction1_6_04() {
+function myFunction6_04() {
 
   //正しく解析される
   let a, b;
@@ -98,7 +98,7 @@ function myFunction1_6_04() {
 
 }
 
-function myFunction1_6_05() {
+function myFunction6_05() {
 
   //セミコロンだけは省略できない1
   for (; ;) {
@@ -114,7 +114,7 @@ function myFunction1_6_05() {
 
 }
 
-function myFunction1_6_06() {
+function myFunction6_06() {
 
   //制御構文や関数宣言の末尾
   for (const value of []) { }
@@ -152,7 +152,7 @@ function myFunction1_6_06() {
 }
 
 
-function myFunction1_6_07() {
+function myFunction6_07() {
 
   //ワンライナーを意識しすぎるのはダメ
   const area = r => { r = +r; return Math.PI * r * r }

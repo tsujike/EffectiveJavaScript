@@ -1,4 +1,4 @@
-function myFunction1_7_01() {
+function myFunction7_01() {
 
   //10進数から2進数や16進数への変換
   console.log((104).toString(2)); //1101000
@@ -10,7 +10,7 @@ function myFunction1_7_01() {
 
 }
 
-function myFunction1_7_02() {
+function myFunction7_02() {
 
   //16進数で指定
   console.log(String.fromCodePoint(0x0068, 0x0065, 0x006c, 0x006c, 0x006f, 0x0021)); //hello!
@@ -38,7 +38,7 @@ function myFunction1_7_02() {
 }
 
 
-function myFunction1_7_03() {
+function myFunction7_03() {
 
   //65535を超えるコードポイントを持つ文字
   console.log('𝄞'.codePointAt(0)); //119070　（ト音記号）
@@ -47,7 +47,7 @@ function myFunction1_7_03() {
 }
 
 
-function myFunction1_7_04() {
+function myFunction7_04() {
 
   //コードユニットを返すlengthプロパティ
   console.log('𝄞 𪚥'.length); //5
@@ -65,7 +65,7 @@ function myFunction1_7_04() {
 }
 
 
-function myFunction1_7_05() {
+function myFunction7_05() {
 
   const json = '{"clef":"\ud834\udd1e" }';
 
@@ -139,7 +139,7 @@ function myFunction1_7_05() {
 }
 
 
-function myFunction1_7_06() {
+function myFunction7_06() {
 
   //コードユニットを返すlengthプロパティ
   console.log('𝄞 𪚥'.length); //5
@@ -162,7 +162,7 @@ function myFunction1_7_06() {
 
 
 
-function myFunction1_7_06() {
+function myFunction7_06() {
   return
 
   //codePointAt(pos) メソッドは、 Unicode コードポイント値である負ではない整数を返します。指定された位置に要素が存在しない場合は undefined を返します。 pos の位置から UTF-16 サロゲートペアが始まらない場合は、 pos の位置のコードユニットを返します。

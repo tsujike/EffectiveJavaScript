@@ -1,4 +1,4 @@
-function myFunction1_4_01() {
+function myFunction4_01() {
 
   //シンボルプリミティブ値を生成するSymbol()関数
   console.log(typeof Symbol()); //symbol
@@ -16,7 +16,7 @@ function myFunction1_4_01() {
 
 }
 
-function myFunction1_4_02() {
+function myFunction4_02() {
 
   //オブジェクトにプロパティを定義する
   const obj = {};
@@ -48,7 +48,7 @@ function myFunction1_4_02() {
 // const sym2 = Symbol('つじけ');
 
 
-function myFunction1_4_03() {
+function myFunction4_03() {
 
   const obj = {};
   let x, y, n, m;
@@ -79,7 +79,7 @@ function myFunction1_4_03() {
 //シンボルがドット記法で呼び出せない理由
 //https://jsprimer.net/basic/object/
 
-function myFunction1_4_04() {
+function myFunction4_04() {
 
   //組み込みオブジェクトStringに、オリジナルメソッドgetFirstIndex()を定義する
   String.prototype.getFirstIndex = function () { return this[0] };
@@ -106,7 +106,7 @@ function myFunction1_4_04() {
 }
 
 
-function myFunction1_4_05() {
+function myFunction4_05() {
 
   //文字列型をStringオブジェクトに変換するラッパーオブジェクト
   let name = 'kenzo';
@@ -128,7 +128,7 @@ function myFunction1_4_05() {
 }
 
 
-function myFunction1_4_05() {
+function myFunction4_05() {
 
   //Stringオブジェクトのメソッド
   const name = 'kenzo';
