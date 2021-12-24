@@ -102,60 +102,83 @@ function myFunction59_03() {
 
 function myFunction59_04() {
 
+  const guard = {
 
-  class GuardObjectUtility {
-
-    constructor() {
-
-    }
-
-    //引数の型が数値型かどうか判定するメソッド
     guard(x) {
       if (!this.test(x)) {
-        throw new TypeError('expected' + this);
+        throw new TypeError('excepted' + this);
       }
+    },
+
+    or(other) {
+      const result = Object.create(guard);
+      const self = this;
+      result.test = function (x) {
+        return self.test(x) || other.test(x);
+      };
+      const destriction = this + ' or ' + other;
+      result.toString = function () {
+        return destriction;
+      };
+      return result;
     }
 
-    //引数の型をテストするメソッド
+  };
+
+  /** Unit32クラス */
+  class Uint32 {
+
     test(x) {
       return typeof x === 'number' && x === (x >>> 0);
     }
 
     toString() {
-      return 'unit32';
-    }
-
-    or(other){
-      const self = this;
-      
+      return 'uint32';
     }
 
   }
 
-  /** クラスBitVector */
+  //mix-in処理
+  Object.assign(Uint32.prototype, guard);
+
+  const uint32 = new Uint32();
+
+  /** ArrayLikeクラス */
+  class ArrayLike {
+
+    test(x) {
+      return typeof x === 'object' && x && uint32.test(x.length);
+    }
+
+    toString() {
+      return 'array-like Object';
+    }
+  }
+
+  //mix-in処理
+  Object.assign(ArrayLike.prototype, guard);
+
+  const arrayLike = new ArrayLike();
+
+
+  /** BitVectorクラス */
   class BitVector {
 
     constructor() {
-      const unit32 = new GuardObjectUtility();
-      unit32.or(arrayLike).guard(x);
       this.bit = [];
     }
 
     /** bitを格納するメソッド */
     enable(x) {
-
-      if (typeof x === 'number') {
+      uint32.or(arrayLike).guard(x);
+      if (uint32.test(x)) {
         this.enableBit(x);
-      } else if (typeof x === 'object' && x) {
-        for (let i = 0; i < x.length; i++) {
-          this.enableBit(x[i]);
+      } else if (arrayLike.test(x)) {
+        for (const n of x) {
+          this.enableBit(n);
         }
-      } else {
-        throw new TypeError('expected number or array-like');
-        //数値または配列のようなオブジェクトを期待している
       }
     }
-
 
     /** ビットを格納するメソッド */
     enableBit(x) {
@@ -164,14 +187,20 @@ function myFunction59_04() {
 
     /** ビット配列に引数があるか返すメソッド */
     bitAt(x) {
-      return this.bit.includes(x) ? 1 : 0;
+      const result = this.bitAt.includes(x);
+      return result ? true : false;
     }
-
   }
 
-  const bits = new BitVector();
-  bits.enable('3'); //TypeError: expected number or array-like
 
+  const bits = new BitVector();
+
+
+  bits.enable([4, 3]);
+  console.log(bits); // => { bit: [ 4, 3 ] }
+
+  bits.enable(5);
+  console.log(bits); // => { bit: [ 4, 3, 5 ] }
 
 
 }

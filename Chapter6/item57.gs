@@ -13,13 +13,63 @@ function myFunction57_01() {
       this.format = format;
     }
 
+    displayPage(source) {
+      const page = this.format(source);
+      const title = page.getTitle();
+      const author = page.getAuthor();
+      const outPut = page.toHTML();
+      return outPut;
+    }
+
   }
 
-  // const wiki = { formats: { 'MEDIAWIKI'  };
+  //静的プロパティ(MEDIAWIKIフォーマット（仮）の定義)
+  Wiki.formats = {
+    MEDIAWIKI(source) {
+      return new MWPage(source);
+    }
 
+  }
+
+
+  /** クラスPage */
+  class Page {
+    constructor(source) {
+      this.source = source;
+    }
+
+  }
+
+  /** クラスMWPage */
+  class MWPage extends Page {
+
+    constructor(source) {
+      super(source);
+    }
+
+    getTitle() { return this.source.title; }
+    getAuthor() { return this.source.author; }
+    toHTML() { return '<!doctype html> <html lang="ja"> <head>...'; }
+  }
+
+
+  //MEDIAWIKIフォーマットを適用するためのインスタンス
   const app = new Wiki(Wiki.formats.MEDIAWIKI);
-  console.log(app);
+
+
+  //ユーザーがMEDIAWIKIフォーマット（仮）で作成したコンテンツ
+  const source = {
+    title: 'クロージャ',
+    author: 'KENZO TSUJI',
+    body: `クロージャとは、**スコープチェーンを遡って**変数を参照する仕組みを持っている**関数**`
+  }
+
+  //レンダリング（HTMLを生成してWebページを表示する）処理
+  console.log(app.displayPage(source)); // => <!doctype html> <html lang="ja"> <head>...
+
 }
+
+
 
 
 function myFunction57_02() {
@@ -36,72 +86,47 @@ function myFunction57_02() {
       const title = page.getTitle();
       const author = page.getAuthor();
       const outPut = page.toHTML();
+      return outPut;
     }
 
   }
+
+  //静的プロパティ(MEDIAWIKIフォーマット（仮）の定義)
+  Wiki.formats = {
+    MEDIAWIKI(source) {
+
+      const obj = {
+        getTitle() { return source.title; },
+        getAuthor() { return source.author; },
+        toHTML() { return '<!doctype html> <html lang="ja"> <head>...'; }
+      };
+
+      return obj;
+    }
+
+  }
+
+
+  //MEDIAWIKIフォーマットを適用するためのインスタンス
+  const app = new Wiki(Wiki.formats.MEDIAWIKI);
+
+  //ユーザーがMEDIAWIKIフォーマット（仮）で作成したコンテンツ
+  const source = {
+    title: 'クロージャ',
+    author: 'KENZO TSUJI',
+    body: `クロージャとは、**スコープチェーンを遡って**変数を参照する仕組みを持っている**関数**`
+  }
+
+  //レンダリング（HTMLを生成してWebページを表示する）処理
+  console.log(app.displayPage(source)); // => <!doctype html> <html lang="ja"> <head>...
+
 }
 
 
+
+
+
 function myFunction57_03() {
-
-  /** クラスPage */
-  class Page {
-    constructor(source) {
-      this.source = source;
-    }
-
-  }
-
-
-  /** クラスMWPage
-   * @extends Page
-   */
-  class MWPage extends Page {
-
-    constructor(source) {
-      super(source);
-
-    }
-
-    getTitle() {
-      //処理  
-    }
-
-    getAuthor() {
-      //処理   
-    }
-
-    toHTML() {
-      //処理    
-    }
-
-  }
-
-
-
-  /** クラスWiki */
-  class Wiki {
-
-    constructor(format) {
-      this.format = format;
-    }
-
-    displayPage(source) {
-      const page = this.format(source);
-      const title = page.getTitle();
-      const author = page.getAuthor();
-      const outPut = page.toHTML();
-    }
-
-  }
-
-  //MWPageインスタンスを返すファクトリー関数
-  Wiki.formats = {
-    MEDIAWIKI(source) {
-      return new MWPage(source);
-    }
-  }
-
 
 
 
@@ -111,29 +136,6 @@ function myFunction57_03() {
 
 function myFunction57_04() {
 
-  /** クラスWiki */
-  class Wiki {
-
-    constructor(format) {
-      this.format = format;
-    }
-
-  }
-
-  //静的プロパティ
-  Wiki.formats = {
-    MEDIAWIKI(source) {
-
-      const obj = {
-        getTitle() {/* ... */ },
-        getAuthor() {/* ... */ },
-        toHTML() {/* ... */ }
-      };
-
-      return obj;
-    }
-
-  }
 
 }
 
